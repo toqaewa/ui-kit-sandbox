@@ -9,6 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import './Chart.css'
 import CustomTooltip from './CustomTooltip';
 
 const generateWeekData = (weeksCount: any, year = 2025) => {

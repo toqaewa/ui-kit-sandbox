@@ -10,6 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import './Chart.css'
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
 
 const ExtremeCustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>)  => {

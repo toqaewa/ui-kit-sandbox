@@ -12,39 +12,40 @@ import {
 import './Chart.css'
 import CustomTooltip from './CustomTooltip';
 
-const generateRealisticAccumulatedData = (weeksCount: number, year = 2025) => {
-    let accumulatedIncome = 0;
-    let accumulatedExpense = 0;
-  
-    return Array.from({ length: weeksCount }, (_, i) => {
-      const weeklyIncome = Math.round(Math.random() * 10000);
-      const weeklyExpense = Math.round(Math.random() * 5000); // расходы делаю поменьше
-  
-      accumulatedIncome += weeklyIncome;
-      accumulatedExpense += weeklyExpense;
-  
-      const revenue = accumulatedIncome - accumulatedExpense;
-      const profit = revenue - accumulatedExpense * 0.2; // понижающий коэффициент, типа НДС 20%
-  
-      return {
-        name: `${i + 1} Week ${year}`,
-        income: accumulatedIncome,
-        expense: accumulatedExpense,
-        revenue: revenue,
-        profit: Math.round(profit),
-      };
-    });
-  };
-  
-const data = generateRealisticAccumulatedData(23);
+const generateBadAccumulatedData = (weeksCount: number, year = 2025) => {
+  let accumulatedIncome = 0;
+  let accumulatedExpense = 0;
 
-function AccumulatedDataChart() {
+  return Array.from({ length: weeksCount }, (_, i) => {
+    const weeklyIncome = Math.round(Math.random() * 10000);
+    const weeklyExpense = Math.round(Math.random() * 5000); // расходы делаю поменьше
+
+    accumulatedIncome += weeklyIncome;
+    accumulatedExpense += weeklyExpense;
+
+    const revenue = accumulatedIncome - accumulatedExpense;
+    const profit = revenue - accumulatedExpense * 0.2; // понижающий коэффициент, типа НДС 20%
+
+    return {
+      name: `${i + 1} Week ${year}`,
+      income: weeklyIncome > 2000 ? accumulatedIncome : undefined,
+      expense: weeklyExpense > 2000 ? accumulatedExpense : undefined,
+      revenue: revenue > 2000 ? revenue : undefined,
+      profit: profit > 2000 ? Math.round(profit) : undefined,
+    };
+  });
+};
+
+const badData = generateBadAccumulatedData(23);
+
+
+function BadDataAccumulatedChart() {
   return (
     <div style={{ width: '100%', height: 300 }}>
-        <span className='title'>Accumulated Data Chart</span>
+        <span className='title'>Bad Data Chart</span>
         <ResponsiveContainer>
-            <AreaChart 
-                data={data}
+        <AreaChart 
+                data={badData}
                 margin={{
                     top: 12,
                     right: 0,
@@ -74,4 +75,4 @@ function AccumulatedDataChart() {
   );
 }
 
-export default AccumulatedDataChart;
+export default BadDataAccumulatedChart;
