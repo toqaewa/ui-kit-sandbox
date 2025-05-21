@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   LineChart,
   Line,
+  BarChart, 
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -12,6 +14,7 @@ import {
 } from "recharts";
 import './Chart.css'
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
+import Toggle from '../Toggle/Toggle';
 
 const ExtremeCustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameType>)  => {
     if (active && payload && payload.length) {
@@ -64,11 +67,60 @@ const generateWeekData = (weeksCount: any, year = 2025) => {
 const data = generateWeekData(23);
 
 function ExtremeDataChart() {
+  const [isColumnChart, setIsColumnChart] = useState(false);
   return (
-    <div style={{ width: '100%', height: 300 }}>
+    <div style={{ width: '100%', height: 300, display: "flex", flexDirection:"column", alignItems: "center" }}>
+      <div style={{display: "flex", gap: 16}}>
         <span className='title'>Extreme Data Chart</span>
-        <ResponsiveContainer>
-            <LineChart 
+        <Toggle 
+          label='Column Chart'
+          initialValue={isColumnChart}
+          onChange={setIsColumnChart}
+        />
+      </div>
+      {
+        isColumnChart ? (
+          <ResponsiveContainer>
+            <BarChart 
+                data={data}
+                margin={{
+                    top: 12,
+                    right: 0,
+                    left: 0,
+                    bottom: 24,
+                  }} 
+            >
+                <CartesianGrid strokeDasharray="3 3" stroke='#777677' strokeOpacity={0.5} />
+                <XAxis className="App" dataKey="name" interval={"preserveStartEnd"} />
+                <YAxis className="App" />
+                <Tooltip 
+                    content={<ExtremeCustomTooltip />}
+                    cursor={{
+                        strokeDasharray: "3 3",
+                        stroke: '#777677',
+                        strokeOpacity: 0.5,
+                    }} 
+                />
+                <Legend />
+                <Bar dataKey="Revenue Net" fill="#FF8B1F" />
+                <Bar dataKey="Avg Check Per Guest" fill="#04E762" />
+                <Bar dataKey="Income Accumulated" fill="#3370FF" />
+                <Bar dataKey="Profit Gross Per M²" fill="#9DFF6F" />
+                <Bar dataKey="Revenue Gross" fill="#FF2C47" />
+                <Bar dataKey="Revenue" fill="#B15DE8" />
+                <Bar dataKey="Expense Per Seat" fill="#FFBE99" />
+                <Bar dataKey="Revenue Net Accumulated" fill="#DABFFF" />
+                <Bar dataKey="Discount Loyalty" fill="#FFF047" />
+                <Bar dataKey="Avg Check Per Hour" fill="#DCD8D3" />
+                <Bar dataKey="Avg Check Per Table" fill="#FF8ADE" />
+                <Bar dataKey="Table Occupancy Rate" fill="#99FFF8" />
+                <Bar dataKey="CSI" fill="#CF7B5A" />
+                <Bar dataKey="Checks Count" fill="#63C7FF" />
+            </BarChart>
+        </ResponsiveContainer>
+        ) : (
+          <ResponsiveContainer>
+            <LineChart
                 data={data}
                 margin={{
                     top: 12,
@@ -105,6 +157,8 @@ function ExtremeDataChart() {
                 <Line type="monotone" dataKey="Checks Count" stroke="#63C7FF" dot={{ fill: '#63C7FF' }} activeDot={{ stroke: '#63C7FF', strokeWidth: 2 }} />
             </LineChart>
         </ResponsiveContainer>
+        )
+      }
     </div>
   );
 }
