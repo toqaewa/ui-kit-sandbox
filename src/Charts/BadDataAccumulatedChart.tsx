@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     AreaChart,
     Area,
@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import './Chart.css'
 import CustomTooltip from './CustomTooltip';
+import Toggle from '../Toggle/Toggle';
 
 const generateBadAccumulatedData = (weeksCount: number, year = 2025) => {
   let accumulatedIncome = 0;
@@ -38,39 +39,82 @@ const generateBadAccumulatedData = (weeksCount: number, year = 2025) => {
 
 const badData = generateBadAccumulatedData(23);
 
+// const [nullsConnected, setNullsConnected] = useState(false);
+
 
 function BadDataAccumulatedChart() {
+  const [nullsConnected, setNullsConnected] = useState(false);
   return (
-    <div style={{ width: '100%', height: 300 }}>
-        <span className='title'>Bad Data Chart</span>
-        <ResponsiveContainer>
-        <AreaChart 
-                data={badData}
-                margin={{
-                    top: 12,
-                    right: 0,
-                    left: 0,
-                    bottom: 24,
-                  }} 
-            >
-                <CartesianGrid strokeDasharray="3 3" stroke='#777677' strokeOpacity={0.5} />
-                <XAxis className="App" dataKey="name" interval={"preserveStartEnd"} />
-                <YAxis className="App" />
-                <Tooltip 
-                    content={<CustomTooltip />}
-                    cursor={{
-                        strokeDasharray: "3 3",
-                        stroke: '#777677',
-                        strokeOpacity: 0.5,
+    <div style={{ width: '100%', height: 300, display: "flex", flexDirection:"column", alignItems: "center" }}>
+      <div style={{display: "flex", gap: 16}}>
+        <span className='title'>Bad Data Accumulated Chart</span>
+        <Toggle 
+          label='Убрать пробелы в данных'
+          initialValue={nullsConnected}
+          onChange={setNullsConnected}
+        />
+      </div>
+      {
+        nullsConnected ? (
+          <ResponsiveContainer>
+          <AreaChart 
+                  data={badData}
+                  margin={{
+                      top: 12,
+                      right: 0,
+                      left: 0,
+                      bottom: 24,
                     }} 
-                />
-                <Legend />
-                <Area type="monotone" dataKey="income" stroke="#3370FF" fill="#3370FF" dot={{ fill: '#3370FF' }} activeDot={{ stroke: '#3370FF', strokeWidth: 2 }} />
-                <Area type="monotone" dataKey="expense" stroke="#04E762" fill="#04E762" dot={{ fill: '#04E762' }} activeDot={{ stroke: '#04E762', strokeWidth: 2 }} />
-                <Area type="monotone" dataKey="revenue" stroke="#B15DE8" fill="#B15DE8" dot={{ fill: '#B15DE8' }} activeDot={{ stroke: '#B15DE8', strokeWidth: 2 }} />
-                <Area type="monotone" dataKey="profit" stroke="#99FFF8" fill="#99FFF8" dot={{ fill: '#99FFF8' }} activeDot={{ stroke: '#99FFF8', strokeWidth: 2 }} />
-            </AreaChart>
-        </ResponsiveContainer>
+              >
+                  <CartesianGrid strokeDasharray="3 3" stroke='#777677' strokeOpacity={0.5} />
+                  <XAxis className="App" dataKey="name" interval={"preserveStartEnd"} />
+                  <YAxis className="App" />
+                  <Tooltip 
+                      content={<CustomTooltip />}
+                      cursor={{
+                          strokeDasharray: "3 3",
+                          stroke: '#777677',
+                          strokeOpacity: 0.5,
+                      }} 
+                  />
+                  <Legend />
+                  <Area connectNulls type="monotone" dataKey="income" stroke="#3370FF" fill="#3370FF" dot={{ fill: '#3370FF' }} activeDot={{ stroke: '#3370FF', strokeWidth: 2 }} />
+                  <Area connectNulls type="monotone" dataKey="expense" stroke="#04E762" fill="#04E762" dot={{ fill: '#04E762' }} activeDot={{ stroke: '#04E762', strokeWidth: 2 }} />
+                  <Area connectNulls type="monotone" dataKey="revenue" stroke="#B15DE8" fill="#B15DE8" dot={{ fill: '#B15DE8' }} activeDot={{ stroke: '#B15DE8', strokeWidth: 2 }} />
+                  <Area connectNulls type="monotone" dataKey="profit" stroke="#99FFF8" fill="#99FFF8" dot={{ fill: '#99FFF8' }} activeDot={{ stroke: '#99FFF8', strokeWidth: 2 }} />
+              </AreaChart>
+          </ResponsiveContainer>
+        ) : (
+          <ResponsiveContainer>
+          <AreaChart 
+                  data={badData}
+                  margin={{
+                      top: 12,
+                      right: 0,
+                      left: 0,
+                      bottom: 24,
+                    }} 
+              >
+                  <CartesianGrid strokeDasharray="3 3" stroke='#777677' strokeOpacity={0.5} />
+                  <XAxis className="App" dataKey="name" interval={"preserveStartEnd"} />
+                  <YAxis className="App" />
+                  <Tooltip 
+                      content={<CustomTooltip />}
+                      cursor={{
+                          strokeDasharray: "3 3",
+                          stroke: '#777677',
+                          strokeOpacity: 0.5,
+                      }} 
+                  />
+                  <Legend />
+                  <Area type="monotone" dataKey="income" stroke="#3370FF" fill="#3370FF" dot={{ fill: '#3370FF' }} activeDot={{ stroke: '#3370FF', strokeWidth: 2 }} />
+                  <Area type="monotone" dataKey="expense" stroke="#04E762" fill="#04E762" dot={{ fill: '#04E762' }} activeDot={{ stroke: '#04E762', strokeWidth: 2 }} />
+                  <Area type="monotone" dataKey="revenue" stroke="#B15DE8" fill="#B15DE8" dot={{ fill: '#B15DE8' }} activeDot={{ stroke: '#B15DE8', strokeWidth: 2 }} />
+                  <Area type="monotone" dataKey="profit" stroke="#99FFF8" fill="#99FFF8" dot={{ fill: '#99FFF8' }} activeDot={{ stroke: '#99FFF8', strokeWidth: 2 }} />
+              </AreaChart>
+          </ResponsiveContainer>
+        )
+      }
     </div>
   );
 }

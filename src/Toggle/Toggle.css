@@ -1,0 +1,49 @@
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #777677;
+}
+
+.toggle {
+  position: relative;
+  display: inline-flex;
+  height: 24px;
+  width: 44px;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #4B4E5B;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  outline: none;
+}
+
+.toggle--active {
+  background-color: #71483B;
+}
+
+.toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.toggle__knob {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #777677;
+  /* transform: translateX(2px); */
+  transition: transform 0.2s ease;
+}
+
+.toggle__knob--active {
+  transform: translateX(18px);
+  background-color: #CF7B5A;
+}
