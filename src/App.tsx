@@ -3,6 +3,7 @@ import './App.css';
 import BadDataChart from './Charts/BadDataChart';
 import RandomDataChart from './Charts/RandomDataChart';
 import ExtremeDataChart from './Charts/ExtremeDataChart';
+import AccumulatedDataChart from './Charts/AccumulatedDataChart';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <RandomDataChart />
         <BadDataChart />
         <ExtremeDataChart />
+        <AccumulatedDataChart />
       </div>
     </div>
   );
