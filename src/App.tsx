@@ -5,6 +5,7 @@ import RandomDataChart from './Charts/RandomDataChart';
 import ExtremeDataChart from './Charts/ExtremeDataChart';
 import AccumulatedDataChart from './Charts/AccumulatedDataChart';
 import BadDataAccumulatedChart from './Charts/BadDataAccumulatedChart';
+import RealisticChart from './Charts/RealisticChart';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ExtremeDataChart />
         <AccumulatedDataChart />
         <BadDataAccumulatedChart />
+        <RealisticChart />
       </div>
     </div>
   );
