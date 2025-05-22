@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import Sidebar from './Sidebar/Sidebar';
 import { Tab } from "./Sidebar/sidebarTypes";
 import BadDataChart from './Charts/BadDataChart';
