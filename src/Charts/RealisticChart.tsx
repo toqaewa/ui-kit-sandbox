@@ -132,7 +132,7 @@ function RealisticChart() {
       <div style={{display: "flex", gap: 16}}>
         <span className='title'>Realistic Chart</span>
       </div>
-          <ResponsiveContainer>
+          <ResponsiveContainer height={420} width="100%">
             <ComposedChart 
                 data={data}
                 margin={{

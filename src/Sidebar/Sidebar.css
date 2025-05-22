@@ -1,0 +1,36 @@
+.sidebar {
+  display: flex;
+  height: 100vh;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
+}
+
+.sidebar-tabs {
+  width: 200px;
+  padding: 20px 8px;
+}
+
+.sidebar-tab {
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-align: left;
+}
+
+.sidebar-tab:hover {
+  color: #CF7B5A;
+}
+
+.sidebar-tab.active {
+  background: #1E2027B2;
+  color: #CF7B5A;
+  font-weight: bold;
+  border-radius: 16px;
+}
+
+.sidebar-content {
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+}

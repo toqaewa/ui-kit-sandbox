@@ -61,7 +61,7 @@ function BadDataAccumulatedChart() {
       </div>
       {
         isColumnChart ? (
-          <ResponsiveContainer>
+          <ResponsiveContainer height={420} width="100%">
               <BarChart 
                       data={badData}
                       margin={{
@@ -91,7 +91,7 @@ function BadDataAccumulatedChart() {
               </ResponsiveContainer>
         ) : (
           nullsConnected ? (
-            <ResponsiveContainer>
+            <ResponsiveContainer height={420} width="100%">
             <AreaChart 
                     data={badData}
                     margin={{
@@ -120,7 +120,7 @@ function BadDataAccumulatedChart() {
                 </AreaChart>
             </ResponsiveContainer>
           ) : (
-            <ResponsiveContainer>
+            <ResponsiveContainer height={420} width="100%">
             <AreaChart 
                     data={badData}
                     margin={{

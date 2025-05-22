@@ -41,7 +41,7 @@ function RandomDataChart() {
             </div>
             {
                 isColumnChart ? (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <BarChart 
                             data={data}
                             margin={{
@@ -72,7 +72,7 @@ function RandomDataChart() {
                         </BarChart>
                     </ResponsiveContainer>
                 ) : (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <LineChart 
                             data={data}
                             margin={{

@@ -44,7 +44,7 @@ const data = generateRealisticAccumulatedData(23);
 function AccumulatedDataChart() {
     const [isColumnChart, setIsColumnChart] = useState(false);
     return (
-        <div style={{ width: '100%', height: 300, display: "flex", flexDirection:"column", alignItems: "center" }}>
+        <div className='bg'>
             <div style={{display: "flex", gap: 16}}>
                 <span className='title'>Accumulated Data Chart</span>
                 <Toggle 
@@ -55,7 +55,7 @@ function AccumulatedDataChart() {
             </div>
             {
                 isColumnChart ? (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <BarChart 
                             data={data}
                             margin={{
@@ -63,7 +63,7 @@ function AccumulatedDataChart() {
                                 right: 0,
                                 left: 0,
                                 bottom: 24,
-                            }} 
+                            }}
                         >
                             <CartesianGrid strokeDasharray="3 3" stroke='#777677' strokeOpacity={0.5} />
                             <XAxis className="App" dataKey="name" interval={"preserveStartEnd"} />
@@ -84,7 +84,7 @@ function AccumulatedDataChart() {
                         </BarChart>
                     </ResponsiveContainer>
                 ) : (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <AreaChart 
                             data={data}
                             margin={{

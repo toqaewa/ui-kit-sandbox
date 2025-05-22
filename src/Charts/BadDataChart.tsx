@@ -81,7 +81,7 @@ function BadDataChart() {
             </div>
             {
                 isColumnChart ? (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <BarChart 
                             data={badData}
                             margin={{
@@ -110,7 +110,7 @@ function BadDataChart() {
                         </BarChart>
                     </ResponsiveContainer>
                 ) : (
-                    <ResponsiveContainer>
+                    <ResponsiveContainer height={420} width="100%">
                         <LineChart 
                             data={badData}
                             margin={{
