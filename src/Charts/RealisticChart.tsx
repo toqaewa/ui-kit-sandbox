@@ -18,20 +18,20 @@ const RealisticTooltip = ({ active, payload, label }: TooltipProps<ValueType, Na
     if (active && payload && payload.length) {
       return (
         <div className="extreme-custom-tooltip">
-          <div style={{ color: "#DCD8D3", fontSize: "10px", lineHeight: "14px", textAlign: "left" }}>Jan 2024 - Apr 2025</div>
-          <div className="desc" style={{ fontSize: "10px", lineHeight: "14px" }}>TIMELESS 54, TIMELESS 3</div>
+          <div style={{ color: "#DCD8D3", fontSize: "12px", lineHeight: "16px", textAlign: "left" }}>Jan 2024 - Apr 2025</div>
+          <div className="desc" style={{ fontSize: "12px", lineHeight: "16px" }}>TIMELESS 54, TIMELESS 3</div>
           <div style={{display: "flex", flexDirection: "column", gap: 8, maxWidth: 290}}>
             {payload.map((pld) => (
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <div style={{ display: "flex", flexDirection: "row", width: 290 }}>
-                    <div style={{ color: pld.color, display: "flex", alignItems: "left", gap: 4, width: 290, fontSize: "10px", lineHeight: "14px" }}>
+                    <div style={{ color: pld.color, display: "flex", alignItems: "left", gap: 4, width: 290, fontSize: "12px", lineHeight: "16px" }}>
                         <div style={{ background: pld.color, width: 8, height: 8, borderRadius: 2, marginTop: 3, marginBottom: 2 }}></div>
                         <div>{pld.dataKey}</div>
                     </div>
-                    <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "10px", lineHeight: "14px", marginRight: 2 }}>{pld.value}</div>
-                    <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "10px", lineHeight: "14px" }}>{pld.dataKey === "Avg Check Per Guest" ? ("$") : ("₽")}</div>
+                    <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "12px", lineHeight: "16px", marginRight: 2 }}>{pld.value}</div>
+                    <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "12px", lineHeight: "16px" }}>{pld.dataKey === "Avg Check Per Guest" ? ("$") : ("₽")}</div>
                   </div>
-                  <div style={{ display: "flex", flexDirection: "row", width: 290, textAlign: "left", fontSize: "8px", lineHeight: "12px" }}>
+                  <div style={{ display: "flex", flexDirection: "row", width: 290, textAlign: "left", fontSize: "10px", lineHeight: "14px" }}>
                     {
                       pld.dataKey === "Revenue Net" ? ("Currency = RUB; Pay Type = Cash; Day Time = Evening, Night") : (
                         pld.dataKey === "Revenue Gross" ? ("Currency = RUB; Day Time = Night; Day = Friday; Pay Type = Cash") : (
