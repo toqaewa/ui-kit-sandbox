@@ -19,8 +19,8 @@ import CustomTooltip from './CustomTooltip';
 import ChartSettings from './ChartSettings';
 import { ChartSettingsState } from './chartSettingsTypes';
 
-const weeklyData = generateWeeklyData(69);
-const monthlyData = generateMonthlyData(2024, 0, 2025, 3); // Jan 2024 - Apr 2025
+const weeklyData = generateBadWeeklyData(69);
+const monthlyData = generateBadMonthlyData(2024, 0, 2025, 3); // Jan 2024 - Apr 2025
 
 function BadDataChart() {
   const [isColumnChart, setIsColumnChart] = useState(false);
