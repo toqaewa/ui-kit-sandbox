@@ -12,75 +12,37 @@ interface ChartSettingsProps {
     onChange: (key: keyof ChartSettingsState, value: boolean) => void;
 }
 
+const CHECKBOX_OPTIONS: Array<{
+    key: keyof ChartSettingsState;
+    label: string;
+}> = [
+    { key: 'hasRevenueNet', label: 'Revenue Net' },
+    { key: 'hasAvgCheckPerGuest', label: 'Avg Check Per Guest' },
+    { key: 'hasIncomeAccumulated', label: 'Income Accumulated' },
+    { key: 'hasProfitGrossPerM2', label: 'Profit Gross Per M²' },
+    { key: 'hasRevenueGross', label: 'Revenue Gross' },
+    { key: 'hasProfit', label: 'Profit' },
+    { key: 'hasExpensePerSeat', label: 'Expense Per Seat' },
+    { key: 'hasRevenueNetAccumulated', label: 'Revenue Net Accumulated' },
+    { key: 'hasDiscountLoyalty', label: 'Discount Loyalty' },
+    { key: 'hasAvgCheckPerHour', label: 'Avg Check Per Hour' },
+    { key: 'hasAvgCheckPerTable', label: 'Avg Check Per Table' },
+    { key: 'hasChecksCount', label: 'Checks Count' },
+    // { key: 'hasCSI', label: 'CSI' },
+];
+
 const ChartSettings: React.FC<ChartSettingsProps> = ({ settings, onChange }) => {
 
     return (
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
-            <Checkbox 
-                label="Revenue Net"
-                initialValue={settings.hasRevenueNet}
-                onChange={(value) => onChange('hasRevenueNet', value)}
-            />
-            <Checkbox 
-                label="Avg Check Per Guest"
-                initialValue={settings.hasAvgCheckPerGuest}
-                onChange={(value) => onChange('hasAvgCheckPerGuest', value)}
-            />
-            <Checkbox 
-                label="Income Accumulated"
-                initialValue={settings.hasIncomeAccumulated}
-                onChange={(value) => onChange('hasIncomeAccumulated', value)}
-            />
-            <Checkbox 
-                label="Profit Gross Per M²"
-                initialValue={settings.hasProfitGrossPerM2}
-                onChange={(value) => onChange('hasProfitGrossPerM2', value)}
-            />
-            <Checkbox 
-                label="Revenue Gross"
-                initialValue={settings.hasRevenueGross}
-                onChange={(value) => onChange('hasRevenueGross', value)}
-            />
-            <Checkbox 
-                label="Profit"
-                initialValue={settings.hasProfit}
-                onChange={(value) => onChange('hasProfit', value)}
-            />
-            <Checkbox 
-                label="Expense Per Seat"
-                initialValue={settings.hasExpensePerSeat}
-                onChange={(value) => onChange('hasExpensePerSeat', value)}
-            />
-            <Checkbox 
-                label="Revenue Net Accumulated"
-                initialValue={settings.hasRevenueNetAccumulated}
-                onChange={(value) => onChange('hasRevenueNetAccumulated', value)}
-            />
-            <Checkbox 
-                label="Discount Loyalty"
-                initialValue={settings.hasDiscountLoyalty}
-                onChange={(value) => onChange('hasDiscountLoyalty', value)}
-            />
-            <Checkbox 
-                label="Avg Check Per Hour"
-                initialValue={settings.hasAvgCheckPerHour}
-                onChange={(value) => onChange('hasAvgCheckPerHour', value)}
-            />
-            <Checkbox 
-                label="Avg Check Per Table"
-                initialValue={settings.hasAvgCheckPerTable}
-                onChange={(value) => onChange('hasAvgCheckPerTable', value)}
-            />
-            {/* <Checkbox 
-                label="CSI"
-                initialValue={settings.hasCSI}
-                onChange={handleChange('hasCSI')}
-            /> */}
-            <Checkbox 
-                label="Checks Count"
-                initialValue={settings.hasChecksCount}
-                onChange={(value) => onChange('hasChecksCount', value)}
-            />
+            {CHECKBOX_OPTIONS.map((option) => (
+                <Checkbox
+                    key={option.key}
+                    label={option.label}
+                    initialValue={settings[option.key]}
+                    onChange={(value) => onChange(option.key, value)}
+                />
+            ))}
         </div>
     )
 } 
