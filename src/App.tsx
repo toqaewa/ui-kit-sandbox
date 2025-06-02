@@ -1,36 +1,11 @@
-import React from 'react';
 import './App.css';
 import { HashRouter as Router } from 'react-router-dom';
 import Sidebar from './Sidebar/Sidebar';
 import { Tab } from "./Sidebar/sidebarTypes";
-import BadDataChart from './Charts/BadDataChart';
-import ExtremeDataChart from './Charts/ExtremeDataChart';
-import RealisticChart from './Charts/RealisticChart';
-import ComparedChart from './Charts/ComparedChart';
 import Chart from './Charts/Chart';
 
 function App() {
   const tabs: Tab[] = [
-    {
-      id: "RealisticChart",
-      label: "Realistic Chart",
-      content: <RealisticChart />,
-    },
-    {
-      id: "BadDataChart",
-      label: "Bad Data Chart",
-      content: <BadDataChart />,
-    },
-    {
-      id: "ExtremeDataChart",
-      label: "Extreme Data Chart",
-      content: <ExtremeDataChart />,
-    },
-    {
-      id: "ComparedChart",
-      label: "Compared Chart",
-      content: <ComparedChart />
-    },
     {
       id: "Chart",
       label: "Chart",

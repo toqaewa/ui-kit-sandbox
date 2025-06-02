@@ -256,3 +256,90 @@ export const generateBadMonthlyData = (startYear: number, startMonth: number, en
     };
   });
 };
+
+export const chartDataConfig = [
+  { 
+    key: "hasRevenueNet", 
+    dataKey: "Revenue Net", 
+    color: "#FF8B1F",
+    isAccumulated: false, 
+    yAxisId: "left",
+  },
+  {
+    key: "hasAvgCheckPerGuest",
+    dataKey: "Avg Check Per Guest",
+    color: "#04E762",
+    isAccumulated: false,
+    yAxisId: "left",
+  },
+  {
+    key: "hasIncomeAccumulated",
+    dataKey: "Income Accumulated",
+    color: "#3370FF",
+    isAccumulated: true,
+    yAxisId: "left",
+  },
+  {
+    key: "hasProfitGrossPerM2",
+    dataKey: "Profit Gross Per M²",
+    color: "#9DFF6F",
+    isAccumulated: false,
+    yAxisId: "left",
+  },
+  { 
+    key: "hasRevenueGross", 
+    dataKey: "Revenue Gross", 
+    color: "#FF2C47",
+    isAccumulated: false, 
+    yAxisId: "left",
+  },
+  { 
+    key: "hasProfit", 
+    dataKey: "Revenue", 
+    color: "#B15DE8",
+    isAccumulated: false, 
+    yAxisId: "left",
+  },
+  { 
+    key: "hasExpensePerSeat", 
+    dataKey: "Expense Per Seat", 
+    color: "#FFBE99",
+    isAccumulated: false,
+    yAxisId: "left", 
+  },
+  {
+    key: "hasRevenueNetAccumulated",
+    dataKey: "Revenue Net Accumulated",
+    color: "#DABFFF",
+    isAccumulated: true,
+    yAxisId: "left",
+  },
+  { 
+    key: "hasDiscountLoyalty", 
+    dataKey: "Discount Loyalty", 
+    color: "#FFF047",
+    isAccumulated: false,
+    yAxisId: "left", 
+  },
+  {
+    key: "hasAvgCheckPerHour",
+    dataKey: "Avg Check Per Hour",
+    color: "#DCD8D3",
+    isAccumulated: false,
+    yAxisId: "left",
+  },
+  {
+    key: "hasAvgCheckPerTable",
+    dataKey: "Avg Check Per Table",
+    color: "#FF8ADE",
+    isAccumulated: false,
+    yAxisId: "left",
+  },
+  {
+    key: "hasChecksCount",
+    dataKey: "Checks Count",
+    color: "#63C7FF",
+    isAccumulated: false,
+    yAxisId: "right",
+  },
+];
