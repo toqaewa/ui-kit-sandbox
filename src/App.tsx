@@ -7,6 +7,7 @@ import BadDataChart from './Charts/BadDataChart';
 import ExtremeDataChart from './Charts/ExtremeDataChart';
 import RealisticChart from './Charts/RealisticChart';
 import ComparedChart from './Charts/ComparedChart';
+import Chart from './Charts/Chart';
 
 function App() {
   const tabs: Tab[] = [
@@ -29,7 +30,12 @@ function App() {
       id: "ComparedChart",
       label: "Compared Chart",
       content: <ComparedChart />
-    }
+    },
+    {
+      id: "Chart",
+      label: "Chart",
+      content: <Chart />
+    },
   ];
   return (
     <div className="App">
