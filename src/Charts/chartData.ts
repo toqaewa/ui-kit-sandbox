@@ -37,6 +37,19 @@ export const generateWeeklyData = (weeksCount: number, year = 2025) => {
             "Avg Check Per Table": Math.round(avgCheck / 70),
             "CSI": CSI,
             "Checks Count": checksCount,
+            "Revenue Net Prev": Math.round(Math.round(weeklyRevenue * 0.9) * Math.random()),
+            "Avg Check Per Guest Prev": Math.round(Math.round(avgCheck / 3) * Math.random()), 
+            "Income Accumulated Prev": Math.round(accumulatedIncome * Math.random()),
+            "Profit Gross Per M² Prev": Math.round(Math.round(accumulatedProfit / 70) * Math.random()),
+            "Revenue Gross Prev": Math.round(weeklyRevenue * Math.random()),
+            "Profit Prev": Math.round(weeklyProfit * Math.random()),
+            "Expense Per Seat Prev": Math.round(Math.round(weeklyExpense / 70) * Math.random()),
+            "Revenue Net Accumulated Prev": Math.round(Math.round(accumulatedRevenue * 0.9) * Math.random()),
+            "Discount Loyalty Prev": Math.round(Math.round(avgCheck * 0.9) * Math.random()),
+            "Avg Check Per Hour Prev": Math.round(Math.round(avgCheck / 2) * Math.random()),
+            "Avg Check Per Table Prev": Math.round(Math.round(avgCheck / 70) * Math.random()),
+            "CSI Prev": Math.round(CSI * Math.random()),
+            "Checks Count Prev": Math.round(checksCount * Math.random()),
         };
     });
 };
@@ -80,6 +93,19 @@ export const generateBadWeeklyData = (weeksCount: number, year = 2025) => {
           "Avg Check Per Table": avgCheck > 2000 ? Math.round(avgCheck / 70) : undefined,
           "CSI": CSI > 2 ? CSI : undefined,
           "Checks Count": checksCount > 2 ? checksCount : undefined,
+          "Revenue Net Prev": weeklyRevenue > 200000 ? Math.round(Math.round(weeklyRevenue * 0.9) * Math.random()) : undefined,
+          "Avg Check Per Guest Prev": avgCheck > 2000? Math.round(Math.round(avgCheck / 3) * Math.random()): undefined, 
+          "Income Accumulated Prev": weeklyIncome > 200000 ? Math.round(accumulatedIncome * Math.random()) : undefined,
+          "Profit Gross Per M² Prev": weeklyRevenue > 200000 ? Math.round(Math.round(accumulatedProfit / 70) * Math.random()) : undefined,
+          "Revenue Gross Prev": weeklyRevenue > 200000 ? Math.round(weeklyRevenue * Math.random()) : undefined,
+          "Profit Prev": weeklyRevenue > 200000 ? Math.round(weeklyProfit * Math.random()) : undefined,
+          "Expense Per Seat Prev": weeklyExpense > 20000 ? Math.round(Math.round(weeklyExpense / 70) * Math.random()) : undefined,
+          "Revenue Net Accumulated Prev": weeklyRevenue > 200000 ? Math.round(Math.round(accumulatedRevenue * 0.9) * Math.random()) : undefined,
+          "Discount Loyalty Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck * 0.9) * Math.random()) : undefined,
+          "Avg Check Per Hour Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck / 2) * Math.random()) : undefined,
+          "Avg Check Per Table Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck / 70) * Math.random()) : undefined,
+          "CSI Prev": CSI > 2 ? Math.round(CSI * Math.random()) : undefined,
+          "Checks Count Prev": checksCount > 2 ? Math.round(checksCount * Math.random()) : undefined,
       };
   });
 };
@@ -156,6 +182,19 @@ export const generateMonthlyData = (startYear: number, startMonth: number, endYe
       "Avg Check Per Table": Math.round(avgCheck / 70),
       "CSI": CSI,
       "Checks Count": checksCount,
+      "Revenue Net Prev": Math.round(Math.round(weeklyRevenue * 0.9) * Math.random()),
+      "Avg Check Per Guest Prev": Math.round(Math.round(avgCheck / 3) * Math.random()),
+      "Income Accumulated Prev": Math.round(accumulatedIncome * Math.random()),
+      "Profit Gross Per M² Prev": Math.round(Math.round(accumulatedProfit / 70) * Math.random()),
+      "Revenue Gross Prev": Math.round(weeklyRevenue * Math.random()),
+      "Profit Prev": Math.round(weeklyProfit * Math.random()),
+      "Expense Per Seat Prev": Math.round(Math.round(weeklyExpense / 70) * Math.random()),
+      "Revenue Net Accumulated Prev": Math.round(Math.round(accumulatedRevenue * 0.9) * Math.random()),
+      "Discount Loyalty Prev": Math.round(Math.round(avgCheck * 0.9) * Math.random()),
+      "Avg Check Per Hour Prev": Math.round(Math.round(avgCheck / 2) * Math.random()),
+      "Avg Check Per Table Prev": Math.round(Math.round(avgCheck / 70) * Math.random()),
+      "CSI Prev": Math.round(CSI * Math.random()),
+      "Checks Count Prev": Math.round(checksCount * Math.random()),
     };
   });
 };
@@ -201,6 +240,19 @@ export const generateBadMonthlyData = (startYear: number, startMonth: number, en
       "Avg Check Per Table": avgCheck > 2000 ? Math.round(avgCheck / 70) : undefined,
       "CSI": CSI > 2 ? CSI : undefined,
       "Checks Count": checksCount > 2 ? checksCount : undefined,
+      "Revenue Net Prev": weeklyRevenue > 2000000 ? Math.round(Math.round(weeklyRevenue * 0.9) * Math.random()) : undefined,
+      "Avg Check Per Guest Prev": avgCheck > 2000 ?Math.round( Math.round(avgCheck / 3) * Math.random()) : undefined,
+      "Income Accumulated Prev": weeklyIncome > 2000000 ? Math.round(accumulatedIncome * Math.random()) : undefined,
+      "Profit Gross Per M² Prev": weeklyRevenue > 2000000 ? Math.round(Math.round(accumulatedProfit / 70) * Math.random()) : undefined,
+      "Revenue Gross Prev": weeklyRevenue > 2000000 ? Math.round(weeklyRevenue * Math.random()) : undefined,
+      "Profit Prev": weeklyRevenue > 2000000 ? Math.round(weeklyProfit * Math.random()) : undefined,
+      "Expense Per Seat Prev": weeklyExpense > 20000 ? Math.round(Math.round(weeklyExpense / 70) * Math.random()) : undefined,
+      "Revenue Net Accumulated Prev": weeklyRevenue > 2000000 ? Math.round(Math.round(accumulatedRevenue * 0.9) * Math.random()) : undefined,
+      "Discount Loyalty Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck * 0.9) * Math.random()) : undefined,
+      "Avg Check Per Hour Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck / 2) * Math.random()) : undefined,
+      "Avg Check Per Table Prev": avgCheck > 2000 ? Math.round(Math.round(avgCheck / 70) * Math.random()) : undefined,
+      "CSI Prev": CSI > 2 ? Math.round(CSI * Math.random()) : undefined,
+      "Checks Count Prev": checksCount > 2 ? Math.round(checksCount * Math.random()) : undefined,
     };
   });
 };

@@ -6,7 +6,7 @@ import { Tab } from "./Sidebar/sidebarTypes";
 import BadDataChart from './Charts/BadDataChart';
 import ExtremeDataChart from './Charts/ExtremeDataChart';
 import RealisticChart from './Charts/RealisticChart';
-import GuestChart from './Charts/GuestsChart';
+import ComparedChart from './Charts/ComparedChart';
 
 function App() {
   const tabs: Tab[] = [
@@ -26,9 +26,9 @@ function App() {
       content: <ExtremeDataChart />,
     },
     {
-      id: "GuestChart",
-      label: "GuestChart",
-      content: <GuestChart />
+      id: "ComparedChart",
+      label: "Compared Chart",
+      content: <ComparedChart />
     }
   ];
   return (

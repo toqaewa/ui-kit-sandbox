@@ -21,19 +21,19 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
                     <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "12px", lineHeight: "16px", marginRight: 2 }}>{pld.value}</div>
                     <div style={{ color: "#DCD8D3", fontWeight: "bold", fontSize: "12px", lineHeight: "16px" }}>
                     {
-                      pld.dataKey === "Revenue Net" ? ("₽") : (
-                        pld.dataKey === "Avg Check Per Guest" ? ("₽") : (
-                          pld.dataKey === "Income Accumulated" ? ("₽") : (
-                            pld.dataKey === "Profit Gross Per M²" ? ("₽") : (
-                              pld.dataKey === "Revenue Gross" ? ("₽") : (
-                                pld.dataKey === "Profit" ? ("₽") : (
-                                    pld.dataKey === "Expense Per Seat" ? ("₽") : (
-                                        pld.dataKey === "Revenue Net Accumulated" ? ("₽") : (
-                                            pld.dataKey === "Discount Loyalty" ? ("₽") : (
-                                                pld.dataKey === "Avg Check Per Hour" ? ("₽") : (
-                                                    pld.dataKey === "Avg Check Per Table" ? ("₽") : (
-                                                        pld.dataKey === "CSI" ? ("pts") : (
-                                                            pld.dataKey === "Checks Count" ? ("") : ("")
+                      pld.dataKey === "Revenue Net" || pld.dataKey === "Revenue Net Prev" ? ("₽") : (
+                        pld.dataKey === "Avg Check Per Guest" || pld.dataKey === "Avg Check Per Guest Prev" ? ("₽") : (
+                          pld.dataKey === "Income Accumulated" || pld.dataKey === "Income Accumulated Prev" ? ("₽") : (
+                            pld.dataKey === "Profit Gross Per M²" || pld.dataKey === "Profit Gross Per M² Prev" ? ("₽") : (
+                              pld.dataKey === "Revenue Gross" || pld.dataKey === "Revenue Gross Prev" ? ("₽") : (
+                                pld.dataKey === "Profit" || pld.dataKey === "Profit Prev" ? ("₽") : (
+                                    pld.dataKey === "Expense Per Seat" || pld.dataKey === "Expense Per Seat Prev" ? ("₽") : (
+                                        pld.dataKey === "Revenue Net Accumulated" || pld.dataKey === "Revenue Net Accumulated Prev" ? ("₽") : (
+                                            pld.dataKey === "Discount Loyalty" || pld.dataKey === "Discount Loyalty Prev" ? ("₽") : (
+                                                pld.dataKey === "Avg Check Per Hour" || pld.dataKey === "Avg Check Per Hour Prev" ? ("₽") : (
+                                                    pld.dataKey === "Avg Check Per Table" || pld.dataKey === "Avg Check Per Table Prev" ? ("₽") : (
+                                                        pld.dataKey === "CSI" || pld.dataKey === "CSI Prev" ? ("pts") : (
+                                                            pld.dataKey === "Checks Count" || pld.dataKey === "Checks Count Prev" ? ("") : ("")
                                                         )
                                                     )
                                                 )
@@ -51,19 +51,19 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
                   </div>
                   <div style={{ display: "flex", flexDirection: "row", width: 290, textAlign: "left", fontSize: "10px", lineHeight: "14px" }}>
                     {
-                      pld.dataKey === "Revenue Net" ? ("Currency = RUB; Pay Type = Cash; Day Time = Evening, Night") : (
-                        pld.dataKey === "Avg Check Per Guest" ? ("Currency = RUB; Loyalty Program = With Loyalty Program; Guest Type = Returning Guest") : (
-                          pld.dataKey === "Income Accumulated" ? ("Currency = RUB; Category = Merch, Consulting, Catering; Account Type = Bank Account") : (
-                            pld.dataKey === "Profit Gross Per M²" ? ("Currency = RUB; Product Category = Hookahs; Day Time = Morning; Day = Weekdays") : (
-                              pld.dataKey === "Revenue Gross" ? ("Currency = RUB; Day Time = Night") : (
-                                pld.dataKey === "Profit" ? ("Currency = RUB; Day = Friday") : (
-                                    pld.dataKey === "Expense Per Seat" ? ("Currency = RUB; Category = Acquiring ; System type = Active") : (
-                                        pld.dataKey === "Revenue Net Accumulated" ? ("Currency = RUB; Day = Monday") : (
-                                            pld.dataKey === "Discount Loyalty" ? ("Currency = RUB; Day = Friday, Saturday, Sunday; Guest Type = New Guest") : (
-                                                pld.dataKey === "Avg Check Per Hour" ? ("Currency = RUB; Day Time = Night") : (
-                                                    pld.dataKey === "Avg Check Per Table" ? ("Currency = RUB; Day = Friday") : (
-                                                        pld.dataKey === "CSI" ? ("") : (
-                                                            pld.dataKey === "Checks Count" ? ("Day = Friday") : ("")
+                      pld.dataKey === "Revenue Net" || pld.dataKey === "Revenue Net Prev" ? ("Currency = RUB; Pay Type = Cash; Day Time = Evening, Night") : (
+                        pld.dataKey === "Avg Check Per Guest" || pld.dataKey === "Avg Check Per Guest Prev" ? ("Currency = RUB; Loyalty Program = With Loyalty Program; Guest Type = Returning Guest") : (
+                          pld.dataKey === "Income Accumulated" || pld.dataKey === "Income Accumulated Prev" ? ("Currency = RUB; Category = Merch, Consulting, Catering; Account Type = Bank Account") : (
+                            pld.dataKey === "Profit Gross Per M²" || pld.dataKey === "Profit Gross Per M² Prev" ? ("Currency = RUB; Product Category = Hookahs; Day Time = Morning; Day = Weekdays") : (
+                              pld.dataKey === "Revenue Gross" || pld.dataKey === "Revenue Gross Prev" ? ("Currency = RUB; Day Time = Night") : (
+                                pld.dataKey === "Profit" || pld.dataKey === "Profit Prev" ? ("Currency = RUB; Day = Friday") : (
+                                    pld.dataKey === "Expense Per Seat" || pld.dataKey === "Expense Per Seat Prev" ? ("Currency = RUB; Category = Acquiring ; System type = Active") : (
+                                        pld.dataKey === "Revenue Net Accumulated" || pld.dataKey === "Revenue Net Accumulated Prev" ? ("Currency = RUB; Day = Monday") : (
+                                            pld.dataKey === "Discount Loyalty" || pld.dataKey === "Discount Loyalty Prev" ? ("Currency = RUB; Day = Friday, Saturday, Sunday; Guest Type = New Guest") : (
+                                                pld.dataKey === "Avg Check Per Hour" || pld.dataKey === "Avg Check Per Hour Prev" ? ("Currency = RUB; Day Time = Night") : (
+                                                    pld.dataKey === "Avg Check Per Table" || pld.dataKey === "Avg Check Per Table Prev" ? ("Currency = RUB; Day = Friday") : (
+                                                        pld.dataKey === "CSI" || pld.dataKey === "CSI Prev" ? ("") : (
+                                                            pld.dataKey === "Checks Count" || pld.dataKey === "Checks Count Prev" ? ("Day = Friday") : ("")
                                                         )
                                                     )
                                                 )
