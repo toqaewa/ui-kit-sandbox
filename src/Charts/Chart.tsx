@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import {
   ComposedChart,
   Line,
@@ -23,6 +23,7 @@ import CustomTooltip from "./CustomTooltip";
 import ChartSettings from "./ChartSettings";
 import { ChartSettingsState } from "./chartSettingsTypes";
 import Toggle from "../Toggle/Toggle";
+import { StripedBar } from "./CustomBar";
 
 const weeklyData = generateWeeklyData(69);
 const monthlyData = generateMonthlyData(2024, 0, 2025, 3); // Jan 2024 - Apr 2025
@@ -83,7 +84,7 @@ function Chart() {
             yAxisId={config.yAxisId} 
             dataKey={prevDataKey} 
             fill={config.color} 
-            fillOpacity={0.3}
+            shape={<StripedBar />}
           />
         );
       }
