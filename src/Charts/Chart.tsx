@@ -71,48 +71,47 @@ function Chart() {
 
   const renderChartElements = () => {
     return chartDataConfig.flatMap(config => {
-      const elements = [];
+      if (!chartSettings[config.key as keyof ChartSettingsState]) return [];
       
-      if (chartSettings[config.key as keyof ChartSettingsState]) {
-        if (isColumnChart) {
-          elements.push(
-            <Bar 
-              key={config.dataKey}
-              yAxisId={config.yAxisId} 
-              dataKey={config.dataKey} 
-              fill={config.color} 
-            />
-          );
-        } else {
-          const Element = config.isAccumulated ? Area : Line;
-          elements.push(
-            <Element 
-              key={config.dataKey}
-              yAxisId={config.yAxisId} 
-              type="monotone" 
-              dataKey={config.dataKey} 
-              stroke={config.color} 
-              dot={{ fill: config.color }} 
-              activeDot={{ stroke: config.color, strokeWidth: 2 }} 
-            />
-          );
-        }
+      const elements = [];
+      const prevDataKey = `${config.dataKey} Prev`;
+
+      if (isColumnChart && isCompared) {
+        elements.push(
+          <Bar 
+            key={prevDataKey}
+            yAxisId={config.yAxisId} 
+            dataKey={prevDataKey} 
+            fill={config.color} 
+            fillOpacity={0.3}
+          />
+        );
       }
 
-      if (chartSettings[config.key as keyof ChartSettingsState] && isCompared) {
-        const prevDataKey = `${config.dataKey} Prev`;
-        if (isColumnChart) {
-          elements.push(
-            <Bar 
-              key={prevDataKey}
-              yAxisId={config.yAxisId} 
-              dataKey={prevDataKey} 
-              fill={config.color} 
-              fillOpacity={0.3}
-            />
-          );
-        } else {
-          const Element = config.isAccumulated ? Area : Line;
+      if (isColumnChart) {
+        elements.push(
+          <Bar 
+            key={config.dataKey}
+            yAxisId={config.yAxisId} 
+            dataKey={config.dataKey} 
+            fill={config.color} 
+          />
+        );
+      } else {
+        const Element = config.isAccumulated ? Area : Line;
+        elements.push(
+          <Element 
+            key={config.dataKey}
+            yAxisId={config.yAxisId} 
+            type="monotone" 
+            dataKey={config.dataKey} 
+            stroke={config.color} 
+            dot={{ fill: config.color }} 
+            activeDot={{ stroke: config.color, strokeWidth: 2 }} 
+          />
+        );
+
+        if (isCompared) {
           elements.push(
             <Element 
               key={prevDataKey}
