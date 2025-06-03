@@ -131,7 +131,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
                     </span>
                   );
                 } else {
-                  const deltaFormatted = `${isPositive ? '+' : ''}${delta.toFixed(1)}%`;
+                  const deltaFormatted = `${Math.abs(delta).toFixed(1)}%`;
                   deltaElement = (
                     <span style={{ 
                       color: isPositive ? '#4CAF50' : '#F44336',
