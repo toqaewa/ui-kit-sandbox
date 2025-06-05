@@ -170,7 +170,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<ValueType, NameT
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "row", width: 290, textAlign: "left", fontSize: "10px", lineHeight: "14px" }}>
-                  {VALUE_DESCRIPTIONS[baseKey] ?? ""}
+                  {VALUE_DESCRIPTIONS[baseKey] ?? ""} 
                 </div>
               </div>
             );
