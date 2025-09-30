@@ -2,6 +2,7 @@ import "./Chart.css"
 
 import { TooltipProps } from 'recharts';
 import { NameType, ValueType } from "recharts/types/component/DefaultTooltipContent";
+// test
 
 const VALUE_SUFFIXES: Record<string, string> = {
   "Revenue Net": "₽",
