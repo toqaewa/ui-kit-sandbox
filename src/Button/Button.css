@@ -1,0 +1,129 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button--size-s {
+  padding: 6px 12px;
+  font-size: 14px;
+  height: 32px;
+}
+
+.button--size-m {
+  padding: 8px 16px;
+  font-size: 16px;
+  height: 40px;
+}
+
+.button--size-l {
+  padding: 12px 20px;
+  font-size: 18px;
+  height: 48px;
+}
+
+.button--primary {
+  background-color: #202128;
+  color: #CF7B5A;
+  border: 1px solid #382928;
+}
+
+.button--primary:hover {
+  background-color: #251E21;
+}
+
+.button--primary:active {
+  transform: scale(95%);
+}
+
+.button--secondary {
+  background-color: #202128;
+  color: #777677;
+  border: 1px solid #3A3B40;
+}
+
+.button--secondary:hover {
+  background-color: #3a3c46;
+}
+
+.button--secondary:active {
+  transform: scale(95%);
+}
+
+.button--tertiary {
+  background-color: transparent;
+  color: #777677;
+  border: 1px solid transparent;
+}
+
+.button--tertiary:hover {
+  background-color: #202128;
+}
+
+.button--tertiary:active {
+  transform: scale(95%);
+}
+
+.button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.button--loading {
+  cursor: not-allowed;
+}
+
+.button__spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.button__spinner-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: button-spinner 1s infinite linear;
+}
+
+@keyframes button-spinner {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
