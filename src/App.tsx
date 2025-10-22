@@ -4,7 +4,7 @@ import Sidebar from './Sidebar/Sidebar';
 import { Tab } from "./Sidebar/sidebarTypes";
 import Chart from './Charts/Chart';
 import DatePicker from './DatePicker/DatePicker';
-import Form from './Form/Form';
+import DemoForm from './Form/wraps/DemoForm';
 
 function App() {
   const tabs: Tab[] = [
@@ -21,7 +21,7 @@ function App() {
     {
       id: "Form",
       label: "Form",
-      content: <Form />
+      content: <DemoForm />
     },
   ];
   return (
