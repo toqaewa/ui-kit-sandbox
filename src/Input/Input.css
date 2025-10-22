@@ -1,3 +1,9 @@
+.input--multiline {
+  resize: none;
+  min-height: 80px;
+  font-family: inherit;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
@@ -15,37 +21,36 @@
 
 .input {
   padding: 8px 12px;
-  border: 1px solid #4B4E5B;
-  border-radius: 4px;
-  outline: none;
+  border-radius: 12px;
   transition: all 0.2s ease;
   width: 100%;
   font-family: inherit;
-  background-color: transparent;
-  color: #777677;
+  background-color: #181A21;
+  color: #dcd8d3;
+  outline: none;
+  border: 1px solid transparent;
 }
 
 .input::placeholder {
-  color: #4B4E5B;
-  opacity: 0.7;
+  color: #777677;
 }
 
 .input--size-s { 
-  padding: 6px 10px; 
-  font-size: 14px; 
-  height: 32px;
+  padding: 4px 6px; 
+  font-size: 12px; 
+  height: 24px;
 }
 
 .input--size-m { 
-  padding: 8px 12px; 
+  padding: 4px 8px; 
   font-size: 16px; 
-  height: 40px;
+  height: 32px;
 }
 
 .input--size-l { 
-  padding: 12px 16px; 
-  font-size: 18px; 
-  height: 48px;
+  padding: 8px 12px; 
+  font-size: 16px; 
+  height: 40px;
 }
 
 .input--status-valid { 
@@ -58,7 +63,14 @@
 
 .input:focus {
   border-color: #CF7B5A;
-  box-shadow: 0 0 0 2px rgba(207, 123, 90, 0.1);
+}
+
+.input:focus:hover {
+  border-color: #CF7B5A;
+}
+
+.input:hover {
+  border-color: #71483B;
 }
 
 .input--with-icon {

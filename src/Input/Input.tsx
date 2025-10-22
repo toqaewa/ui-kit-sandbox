@@ -1,30 +1,19 @@
 import React from 'react';
-import './Input.css'
+import './Input.css';
+import { InputProps } from './inputTypes';
 
-type InputSize = 'S' | 'M' | 'L';
-type InputStatus = 'valid' | 'error';
-
-interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  size?: InputSize;
-  status?: InputStatus;
-  icon?: React.ReactNode;
-  helperText?: string;
-  helperTextIcon?: React.ReactNode;
-  afterText?: string;
-}
-
-const sizeClasses: Record<InputSize, string> = {
+const sizeClasses: Record<'S' | 'M' | 'L', string> = {
   S: 'input--size-s',
   M: 'input--size-m',
   L: 'input--size-l',
 };
 
-const statusClasses: Record<InputStatus, string> = {
+const statusClasses: Record<'valid' | 'error', string> = {
   valid: 'input--status-valid',
   error: 'input--status-error',
 };
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+const Input = React.forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>((props, ref) => {
   const {
     size = 'M',
     status,
@@ -35,6 +24,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     className,
     style,
     disabled,
+    multiline = false,
+    rows = 3,
     ...restProps
   } = props;
 
@@ -52,7 +43,8 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
     status && statusClasses[status],
     icon && 'input--with-icon',
     afterText && 'input--with-after-text',
-    disabled && 'input--disabled'
+    disabled && 'input--disabled',
+    multiline && 'input--multiline'
   ]
     .filter(Boolean)
     .join(' ');
@@ -66,13 +58,24 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           </div>
         )}
         
-        <input
-          ref={ref}
-          className={inputClasses}
-          style={style}
-          disabled={disabled}
-          {...restProps}
-        />
+        {multiline ? (
+          <textarea
+            ref={ref as React.Ref<HTMLTextAreaElement>}
+            className={inputClasses}
+            style={style}
+            disabled={disabled}
+            rows={rows}
+            {...restProps as React.TextareaHTMLAttributes<HTMLTextAreaElement>}
+          />
+        ) : (
+          <input
+            ref={ref as React.Ref<HTMLInputElement>}
+            className={inputClasses}
+            style={style}
+            disabled={disabled}
+            {...restProps as React.InputHTMLAttributes<HTMLInputElement>}
+          />
+        )}
         
         {afterText && (
           <div className="input__after-text">
