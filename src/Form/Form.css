@@ -1,0 +1,30 @@
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 16px;
+}
+
+.form-title {
+  color: #DCD8D3;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.form-description {
+  color: #777677;
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
