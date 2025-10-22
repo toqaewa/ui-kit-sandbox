@@ -101,6 +101,13 @@ function Form({ config }: FormComponentProps) {
     return errors[fieldName] ? 'error' : 'valid';
   };
 
+  const getHelperText = (fieldName: string, staticHelperText?: string): string => {
+    if (isSubmitted && errors[fieldName]) {
+      return errors[fieldName] || '';
+    }
+    return staticHelperText || '';
+  };
+
   const handleClear = () => {
     setFormData(initialFormData);
     localStorage.removeItem(storageKey);
@@ -122,20 +129,26 @@ function Form({ config }: FormComponentProps) {
       )}
       
       <form onSubmit={handleSubmit} className="form">
-        {fields.map(field => (
-          <Input
-            key={field.name}
-            type={field.type}
-            value={formData[field.name] || ''}
-            onChange={handleInputChange(field.name)}
-            size={field.size || 'M'}
-            status={getFieldStatus(field.name)}
-            helperText={isSubmitted ? errors[field.name] : ''}
-            placeholder={field.placeholder}
-            multiline={field.type === 'textarea'}
-            rows={field.rows}
-          />
-        ))}
+        <div className="form-fields">
+          {fields.map(field => (
+            <Input
+              key={field.name}
+              type={field.type}
+              value={formData[field.name] || ''}
+              onChange={handleInputChange(field.name)}
+              size={field.size || 'M'}
+              status={getFieldStatus(field.name)}
+              helperText={getHelperText(field.name, field.helperText)}
+              helperTextIcon={field.helperTextIcon}
+              placeholder={field.placeholder}
+              multiline={field.type === 'textarea'}
+              rows={field.rows}
+              icon={field.icon}
+              afterText={field.afterText}
+              required={field.required}
+            />
+          ))}
+        </div>
 
         <div className="form-actions">
           <Button 

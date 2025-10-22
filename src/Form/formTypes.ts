@@ -24,6 +24,10 @@ export interface FormFieldConfig {
   defaultValue?: any;
   size?: InputSize;
   rows?: number;
+  icon?: React.ReactNode
+  afterText?: string;
+  helperTextIcon?: string;
+  helperText?: string;
 }
 
 export interface FormConfig {
