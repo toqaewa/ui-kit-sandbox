@@ -1,0 +1,152 @@
+.input--multiline {
+  resize: none;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input {
+  padding: 8px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  width: 100%;
+  font-family: inherit;
+  background-color: #181A21;
+  color: #dcd8d3;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.input::placeholder {
+  color: #777677;
+}
+
+.input--size-s { 
+  font-size: 12px; 
+  height: 24px;
+}
+
+.input--size-m { 
+  font-size: 16px; 
+  height: 32px;
+}
+
+.input--size-l { 
+  font-size: 16px; 
+  height: 40px;
+}
+
+.input--status-valid { 
+  border: 1px solid transparent; 
+}
+
+.input--status-error { 
+  border-color: #ef4444; 
+}
+
+.input--status-error:focus { 
+  border-color: #ef4444 !important; 
+}
+
+.input--status-error:hover { 
+  border-color: #ef4444 !important; 
+}
+
+.input:focus {
+  border-color: #CF7B5A;
+}
+
+.input:focus:hover {
+  border-color: #CF7B5A;
+}
+
+.input:hover {
+  border-color: #71483B;
+}
+
+.input--with-icon {
+  padding-left: 36px;
+}
+
+.input__icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777677;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+.input--with-after-text {
+  padding-right: 50px;
+}
+
+.input__after-text {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777677;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.input-helper-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #777677;
+  transition: color 0.2s ease;
+  padding-left: 8px;
+}
+
+.input-helper-text__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.input-helper-text--valid {
+  color: #CF7B5A;
+}
+
+.input-helper-text--error {
+  color: #ef4444;
+}
+
+.input--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input:disabled {
+  background-color: rgba(75, 78, 91, 0.1);
+  cursor: not-allowed;
+}
+
+.input:disabled + .input__after-text {
+  opacity: 0.6;
+}
