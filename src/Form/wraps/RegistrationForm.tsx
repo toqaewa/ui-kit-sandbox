@@ -15,7 +15,6 @@ const registrationFormConfig: FormConfig = {
       name: 'username',
       type: 'text',
       placeholder: 'Имя',
-      required: true,
       validation: {
         minLength: 3,
         maxLength: 20
@@ -26,14 +25,12 @@ const registrationFormConfig: FormConfig = {
       name: 'email',
       type: 'email',
       placeholder: 'Email',
-      required: true,
       size: 'S'
     },
     {
       name: 'password',
       type: 'password',
       placeholder: 'Пароль',
-      required: true,
       validation: {
         minLength: 6
       },
@@ -43,7 +40,6 @@ const registrationFormConfig: FormConfig = {
       name: 'confirmPassword',
       type: 'password',
       placeholder: 'Подтверждение пароля',
-      required: true,
       validation: {
         custom: (value, allData) => {
           if (value !== allData?.password) {

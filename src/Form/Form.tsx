@@ -145,7 +145,6 @@ function Form({ config }: FormComponentProps) {
               rows={field.rows}
               icon={field.icon}
               afterText={field.afterText}
-              required={field.required}
             />
           ))}
         </div>

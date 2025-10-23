@@ -14,7 +14,6 @@ export interface FormFieldConfig {
   name: string;
   type: FieldType;
   placeholder: string;
-  required?: boolean;
   validation?: {
     pattern?: RegExp;
     minLength?: number;

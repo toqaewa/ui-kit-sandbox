@@ -1,13 +1,13 @@
 import { FormData, FormErrors, FormFieldConfig } from './formTypes';
 
 export const validateField = (value: any, fieldConfig: FormFieldConfig, allData?: FormData): string | null => {
-  const { required, validation } = fieldConfig;
+  const { validation } = fieldConfig;
 
-  if (required && (!value || (typeof value === 'string' && !value.trim()))) {
+  if (!value || (typeof value === 'string' && !value.trim())) {
     return 'Пожалуйста, заполните поле';
   }
 
-  if (!value && !required) {
+  if (!value) {
     return null;
   }
 

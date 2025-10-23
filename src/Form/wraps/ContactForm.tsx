@@ -15,7 +15,6 @@ const contactFormConfig: FormConfig = {
       name: 'name',
       type: 'text',
       placeholder: 'Имя',
-      required: true,
       validation: {
         minLength: 2
       }
@@ -24,7 +23,6 @@ const contactFormConfig: FormConfig = {
       name: 'email',
       type: 'email',
       placeholder: 'Email',
-      required: true
     },
     {
       name: 'phone',
@@ -44,7 +42,6 @@ const contactFormConfig: FormConfig = {
       name: 'message',
       type: 'textarea',
       placeholder: 'Сообщение',
-      required: true,
       validation: {
         minLength: 10
       },
